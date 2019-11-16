@@ -3,7 +3,9 @@ package com.example.kerut.quizapp;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -49,10 +51,10 @@ public class LithuaniaDateActivity extends AppCompatActivity {
                     EditText pirmasAtsakymas = findViewById(R.id.PirmasAtsakymas);
                     if (pirmasAtsakymas.getText().toString().equals(getString(R.string.pirmasAtsakymas))) {
                         atsakytiTeisingai++;
-                    } else if (!pirmasAtsakymas.getText().toString().isEmpty()) {
-                        nuokrypis.add(kiekis++, Math.abs(Integer.parseInt(pirmasAtsakymas.getText().toString()) - Integer.parseInt(getString(R.string.pirmasAtsakymas))));
-                    } else {
+                    } else if (pirmasAtsakymas.getText().toString().isEmpty()) {
                         neatsakyti++;
+                    } else {
+                        nuokrypis.add(kiekis++, Math.abs(Integer.parseInt(pirmasAtsakymas.getText().toString()) - Integer.parseInt(getString(R.string.pirmasAtsakymas))));
                     }
 
                     EditText antrasAtsakymas = findViewById(R.id.AntrasAtsakymas);
@@ -469,6 +471,7 @@ public class LithuaniaDateActivity extends AppCompatActivity {
                 loading.dismiss();
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             protected String doInBackground(String... params) {
                 HashMap<String, String> data = new HashMap<String, String>();
