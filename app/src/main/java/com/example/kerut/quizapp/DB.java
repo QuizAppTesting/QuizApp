@@ -37,7 +37,7 @@ public class DB {
             // byethost naudoja antibot sistema, todel reikia kiekvienam rankutėmis suvesti cookie turinį,
             // kuris pas kiekviena bus skirtingas. kaip tai padaryti zemiau nuoroda
             // http://stackoverflow.com/questions/31912000/byethost-server-passing-html-values-checking-your-browser-with-json-string
-            conn.setRequestProperty("Cookie", "__test=08c08d517fae7c14b1836a788be57237; expires=Friday, January 1, 2038 at 1:55:55 AM; path=/");
+            conn.setRequestProperty("Cookie", "__test=3b12ae2fea971a678179f5f43b9020b2; expires=Friday, January 1, 2038 at 1:55:55 AM; path=/");
             conn.setDoInput(true);
             conn.setDoOutput(true);
 

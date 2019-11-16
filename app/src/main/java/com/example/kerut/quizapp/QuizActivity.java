@@ -162,7 +162,7 @@ public class QuizActivity extends AppCompatActivity {
                 conn.setConnectTimeout(CONNECTION_TIMEOUT);
                 conn.setRequestMethod("POST");
 
-                conn.setRequestProperty("Cookie", "__test=08c08d517fae7c14b1836a788be57237; expires=Friday, January 1, 2038 at 1:55:55 AM; path=/");
+                conn.setRequestProperty("Cookie", "__test=3b12ae2fea971a678179f5f43b9020b2; expires=Friday, January 1, 2038 at 1:55:55 AM; path=/");
 
                 // setDoInput and setDoOutput to true as we send and recieve data
                 conn.setDoInput(true);
