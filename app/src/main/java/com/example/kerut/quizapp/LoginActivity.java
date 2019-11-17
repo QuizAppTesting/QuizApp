@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 User user = new User(getApplicationContext());
                                 user.setUsernameFB(firstName);
                                 user.setEmailFB(email);
-                                user.setPasswordFB("unknown");
+                                user.setPasswordFB();
                                 user.setUsername(firstName);
 //                                ArrayList<String> list = new ArrayList<String>();
 //                                list.add(0, firstName);
@@ -250,9 +250,7 @@ public class LoginActivity extends AppCompatActivity {
                 data.put("password", params[1]);
                 data.put("email", params[2]);
 
-                String result = database.sendPostRequest(getString(R.string.URL_Registration), data);
-
-                return result;
+                return database.sendPostRequest(getString(R.string.URL_Registration), data);
             }
         }
 
@@ -294,8 +292,8 @@ public class LoginActivity extends AppCompatActivity {
                 HashMap<String, String> data = new HashMap<>();
                 data.put("username", params[0]);
                 data.put("password", params[1]);
-                String result = database.sendPostRequest(getString(R.string.URL_Login), data);
-                return result;
+
+                return database.sendPostRequest(getString(R.string.URL_Login), data);
             }
         }
         Login login = new Login();

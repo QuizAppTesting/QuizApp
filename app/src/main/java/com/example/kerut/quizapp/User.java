@@ -76,8 +76,8 @@ public class User {
         this.emailFB = emailFB;
     }
 
-    void setPasswordFB(String passwordFB) {
-        this.passwordFB = passwordFB;
+    void setPasswordFB() {
+        this.passwordFB = "unknown";
     }
 
     String getEmailFB() {

@@ -390,9 +390,7 @@ public class FirstQuizActivity extends AppCompatActivity {
                 data.put("kiekis", params[1]);
                 data.put("pavadinimas", getText(R.string.test_quiz).toString());
 
-                String result = database.sendPostRequest(getString(R.string.URL_QuizLithuania), data);
-
-                return result;
+                return database.sendPostRequest(getString(R.string.URL_QuizLithuania), data);
             }
         }
         addResult newResult = new addResult();

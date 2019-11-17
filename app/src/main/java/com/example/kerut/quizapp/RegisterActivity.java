@@ -124,9 +124,7 @@ public class RegisterActivity extends AppCompatActivity {
                 data.put("password", params[1]);
                 data.put("email", params[2]);
 
-                String result = database.sendPostRequest(getString(R.string.URL_Registration), data);
-
-                return result;
+                return database.sendPostRequest(getString(R.string.URL_Registration), data);
             }
         }
 

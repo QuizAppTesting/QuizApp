@@ -482,9 +482,7 @@ public class LithuaniaDateActivity extends AppCompatActivity {
                 data.put("maxnuokrypis", params[3]);
                 data.put("neatsakyta", params[4]);
 
-                String result = database.sendPostRequest(getString(R.string.URL_QuizDates), data);
-
-                return result;
+                return database.sendPostRequest(getString(R.string.URL_QuizDates), data);
             }
         }
         addResult newResult = new addResult();
