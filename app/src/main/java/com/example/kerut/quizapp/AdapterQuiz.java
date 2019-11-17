@@ -61,14 +61,14 @@ public class AdapterQuiz extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView textusername;
-        TextView textcount;
-        TextView texttopic;
-        TextView texttime;
+       final TextView textusername;
+       final  TextView textcount;
+       final TextView texttopic;
+       final TextView texttime;
 
 
         // create constructor to get vidget reference
-        public MyHolder(View itemView) {
+        MyHolder(View itemView) {
             super(itemView);
             textusername = itemView.findViewById(R.id.textvartotojas);
             textcount = itemView.findViewById(R.id.textkiekis);
