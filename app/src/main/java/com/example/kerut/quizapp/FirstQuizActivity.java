@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -275,7 +276,10 @@ public class FirstQuizActivity extends AppCompatActivity {
                 String query = builder.build().getEncodedQuery();
 
                 OutputStream os = conn.getOutputStream();
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));
+                BufferedWriter writer = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                    writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));
+                }
                 //writer.write(getPostDataString(data));
                 writer.write(query);
                 writer.flush();
@@ -367,9 +371,10 @@ public class FirstQuizActivity extends AppCompatActivity {
 
     private void addResultToDB(final List<String> duom) {
 
+        @SuppressLint("StaticFieldLeak")
         class addResult extends AsyncTask<String, Void, String> {
-            ProgressDialog loading;
-            DB database = new DB();
+            private ProgressDialog loading;
+            private DB database = new DB();
 
             @Override
             protected void onPreExecute() {
@@ -390,7 +395,10 @@ public class FirstQuizActivity extends AppCompatActivity {
                 data.put("kiekis", params[1]);
                 data.put("pavadinimas", getText(R.string.test_quiz).toString());
 
-                return database.sendPostRequest(getString(R.string.URL_QuizLithuania), data);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    return database.sendPostRequest(getString(R.string.URL_QuizLithuania), data);
+                }
+                return null;
             }
         }
         addResult newResult = new addResult();
