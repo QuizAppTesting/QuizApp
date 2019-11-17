@@ -39,10 +39,10 @@ public class LithuaniaDateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int atsakytiTeisingai = 0;
                 int neatsakyti = 0;
-                List<Integer> nuokrypis = new ArrayList<Integer>();
+                List<Integer> nuokrypis = new ArrayList<>();
                 int kiekis = 0;
 
-                List<String> data = new ArrayList<String>();
+                List<String> data = new ArrayList<>();
                 User user = new User(getApplicationContext());
                 data.add(0, user.getUsernameForLogin());
 
@@ -474,7 +474,7 @@ public class LithuaniaDateActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             protected String doInBackground(String... params) {
-                HashMap<String, String> data = new HashMap<String, String>();
+                HashMap<String, String> data = new HashMap<>();
                 data.put("vartotojas", params[0]);
                 data.put("kiekis", params[1]);
                 data.put("pavadinimas", getText(R.string.project_quiz).toString());

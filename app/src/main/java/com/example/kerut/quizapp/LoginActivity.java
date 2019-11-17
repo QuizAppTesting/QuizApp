@@ -245,7 +245,7 @@ public class LoginActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             protected String doInBackground(String... params) {
-                HashMap<String, String> data = new HashMap<String, String>();
+                HashMap<String, String> data = new HashMap<>();
                 data.put("username", params[0]);
                 data.put("password", params[1]);
                 data.put("email", params[2]);
@@ -291,7 +291,7 @@ public class LoginActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             protected String doInBackground(String... params) {
-                HashMap<String, String> data = new HashMap<String, String>();
+                HashMap<String, String> data = new HashMap<>();
                 data.put("username", params[0]);
                 data.put("password", params[1]);
                 String result = database.sendPostRequest(getString(R.string.URL_Login), data);

@@ -42,7 +42,7 @@ import static com.example.kerut.quizapp.QuizActivity.READ_TIMEOUT;
 
 public class FirstQuizActivity extends AppCompatActivity {
 
-    ArrayList<HashMap> list = new ArrayList<HashMap>();
+    ArrayList<HashMap> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class FirstQuizActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                List<String> data = new ArrayList<String>();
+                List<String> data = new ArrayList<>();
                 User user = new User(getApplicationContext());
                 data.add(0, user.getUsernameForLogin());
 
@@ -385,7 +385,7 @@ public class FirstQuizActivity extends AppCompatActivity {
 
             @Override
             protected String doInBackground(String... params) {
-                HashMap<String, String> data = new HashMap<String, String>();
+                HashMap<String, String> data = new HashMap<>();
                 data.put("vartotojas", params[0]);
                 data.put("kiekis", params[1]);
                 data.put("pavadinimas", getText(R.string.test_quiz).toString());
